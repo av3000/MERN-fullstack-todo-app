@@ -17,6 +17,7 @@ class TodoForm extends Component {
     }
 
     handleSubmit(){
+        if(this.state.inputValue)
         this.props.addTodo(this.state.inputValue);
     }
 
@@ -27,9 +28,20 @@ class TodoForm extends Component {
                     type="text"
                     value={this.state.inputValue}
                     onChange={this.handleChange}
+                    style = {{
+                        padding: "6px 14px",
+                        maring: "4px 0",
+                        border: "2px solid #FAFAFA",
+	                    color: "#333333"
+                    }}
                 />
                 <button
                     onClick={this.handleSubmit}
+                    style = {{
+                        padding: "6px 14px",
+                        border: "2px solid #fcfcfc",
+                        backgroundColor: "#fff"
+                    }}
                 >
                     Add Todo
                 </button>

@@ -31,6 +31,9 @@ echo 'mongod --bind_ip=$IP --dbpath=mongodb-data --nojournal --rest "$@"' > mong
 echo 'mongod --dbpath mongodb-data --nojournal "$@"' > mongod
 
 chmod a+x mongod
+```
+In order to use mongoDB during the development, need to keep it running in the background and only from directory where it installed:
+```bash
 ./mongod
 ```
 

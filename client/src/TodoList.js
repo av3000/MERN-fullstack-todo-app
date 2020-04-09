@@ -3,6 +3,14 @@ import TodoItem from './TodoItem';
 import TodoForm from './TodoForm';
 import * as apiCalls from './api';
 
+// CSS
+const TodoListComponent = {
+    listStyleType: "none",
+    display: "flex",
+    flexDirection: "column",
+    alignContent: "flex-start"
+}
+
 class TodoList extends Component {
     constructor(props){
         super(props);
@@ -24,7 +32,6 @@ class TodoList extends Component {
     async addTodo(val){
         let newTodo = await apiCalls.addTodo(val);
         this.setState({todos: [...this.state.todos, newTodo]}) 
-        
     }
 
     async deleteTodo(id) {
@@ -51,10 +58,13 @@ class TodoList extends Component {
             />
         ));
         return (
-            <div>
-                <h1>Todo List</h1>
+            <div style={{
+                boxShadow: "2px 3px 8px rgba(0, 0, 0, .5)",
+                paddingBottom: "10px"
+            }}>
+                <h1 style={{paddingTop: "10px"}}>Todo List</h1>
                 <TodoForm addTodo={this.addTodo}/>
-                <ul>{todos}</ul>
+                <ul style={TodoListComponent}>{todos}</ul>
             </div>
         )
     }
