@@ -41,3 +41,10 @@ npm install mongoose --save
 
 
 visit [MongoDB](https://github.com/mongodb/mongo) repository for more details.
+## Start React App
+
+```bash
+cd client/
+npm i
+npmstart
+```
