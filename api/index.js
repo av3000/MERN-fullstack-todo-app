@@ -1,7 +1,6 @@
-let express = require('express'),
-    app     = express();
-
-const envPORT = 3000;
+const express = require('express'),
+      app     = express(),
+      envPORT = 3000;
 
 app.get('/', function(req, res) {
     res.send("hello world");
